@@ -1,0 +1,15 @@
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.csproj.AssemblyReference.cache
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.AssemblyInfoInputs.cache
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.AssemblyInfo.cs
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.csproj.CoreCompileInputs.cache
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\bin\Debug\net6.0\ProjetoSA2.exe
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\bin\Debug\net6.0\ProjetoSA2.deps.json
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\bin\Debug\net6.0\ProjetoSA2.runtimeconfig.json
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\bin\Debug\net6.0\ProjetoSA2.dll
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\bin\Debug\net6.0\ProjetoSA2.pdb
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.dll
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\refint\ProjetoSA2.dll
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.pdb
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.genruntimeconfig.cache
+C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ref\ProjetoSA2.dll
