@@ -73,14 +73,26 @@ Console.WriteLine(@$"*************************** Select an option: *************
                     Console.ReadKey();
                     Console.Clear();
                     goto Start;
+                    }else{
+                    
+            Console.WriteLine(@$"
+____________________________________________________________________________
+|                                                                          |
+|                            Custommers list                               |
+|__________________________________________________________________________|
+");
+                    foreach(PF eachCustommer in PFlist){
+                    
+                    Console.Write(@$"Name: {eachCustommer.name} Birth day: {eachCustommer.birthDate} Address: {eachCustommer.address.num} {eachCustommer.address.street} ZIP code: {eachCustommer.address.ZIP} SSN: {eachCustommer.SSN} ID: {eachCustommer.ID}");
+                    Console.WriteLine();
                     }
 
+                    Console.WriteLine();
                     Console.Write("(Press any key to return to Main-Menu.)");
                     Console.ReadKey();
                     Console.Clear();
                     goto Start;
-
-                    break;
+                    }
                     
                     case "3":
 
@@ -98,11 +110,14 @@ Console.WriteLine(@$"*************************** Select an option: *************
                     goto Start;
                     }
 
+                    foreach(PJ eachCustommer in PJlist){
+                    
+                    Console.Write(@$"Name: {eachCustommer.name} Address: {eachCustommer.address.num} {eachCustommer.address.street} ZIP code: {eachCustommer.address.ZIP} SSN: {eachCustommer.EIN} ID: {eachCustommer.CIK}");
+                    Console.WriteLine();
+                    }
                     Console.Write("(Press any key to return to Main-Menu.)");
                     Console.ReadKey();
                     goto Start;
-
-                    break;
 
                     case "0":
 
@@ -182,10 +197,12 @@ ____________________________________________________________________________
                         }
 
                         pessoaJuridica.payTaxes(finalPrice);
+                        PJlist.Add(pessoaJuridica);
 
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.BackgroundColor = ConsoleColor.White;   
                         loading("Processing");
+                        Console.Clear();
                         Console.WriteLine(@$"
 ____________________________________________________________________________
 |                    Custommer registered sucessfully!                     |
@@ -248,16 +265,15 @@ ____________________________________________________________________________
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.BackgroundColor = ConsoleColor.White;   
                         loading("Processing");
+                        Console.Clear();
                         Console.WriteLine(@$"
 ____________________________________________________________________________
 |                    Custommer registered sucessfully!                     |
 |__________________________________________________________________________|
 |                                                                          |");
                         Console.WriteLine(""); 
-                        Console.WriteLine("-------- Customer Físico ---------");
-                        Console.WriteLine("");
                         Console.WriteLine("Name............: " + pessoaFisica.name);
-                        Console.WriteLine("Name............: " + pessoaFisica.birthDate);
+                        Console.WriteLine("Birth day.......: " + pessoaFisica.birthDate);
                         Console.WriteLine($"Address.........: {0} {1} St., ZIP code: {2}", addr.num, addr.street, addr.ZIP);
                         Console.WriteLine("SSN.............: " + pessoaFisica.SSN);
                         Console.WriteLine("ID..............: " + pessoaFisica.ID);
