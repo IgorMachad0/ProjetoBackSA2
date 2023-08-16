@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "n9s26uJk5+y78mk/js2HisgaPYRXFkyPK0U6Hthe/5WBSoEDunNYrdzmAwrJiC5DCmmUSvIcNWWpCjQXx8XFcw==",
+  "dgSpecHash": "FO8y85qz2O9YX/q983BAIzIHj1D1IJIVoLAXWTbTPbU1519Xm4a8Cmn9T2pmzxntwUXP1NJeJnFhtdek149wCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\iGORN\\Documents\\Programar\\Projetos\\back end\\ProjetoSA2\\ProjetoSA2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\iGORN\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\iGORN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\iGORN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\iGORN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

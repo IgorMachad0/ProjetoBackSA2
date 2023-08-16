@@ -6,13 +6,14 @@ namespace ProjetoSA2.Classes
             public string SSN{get; set;}
             public string ID{get; set;}
             public DateTime birthDate{get; set;}
+            public string exposiblebDate {get; set;}
             
             public bool validBirthday(DateTime birthDate)
             {
 
                 DateTime Today = DateTime.Today;
                 double years = (Today - birthDate).TotalDays / 365;
-                if(years >= 18){
+                if(years >= 18 && years <= 130){
                     return true;
                 }else{
                     return false;

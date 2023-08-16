@@ -1,4 +1,3 @@
-C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.csproj.AssemblyReference.cache
 C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.AssemblyInfoInputs.cache
 C:\Users\iGORN\Documents\Programar\Projetos\back end\ProjetoSA2\obj\Debug\net6.0\ProjetoSA2.AssemblyInfo.cs
