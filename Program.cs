@@ -56,18 +56,28 @@ Console.WriteLine(@$"*************************** Select an option: *************
 *                                                                          *
 ****************************************************************************");
 
-                customerType = 2;
                 menu = Console.ReadLine();
                 switch (menu){
 
                     case "1":
-
+                    
+                    customerType = null;
+                    
                     break;
 
                     case "2":
 
                     Console.Clear();
-                    if(PFlist.Count == 0){
+                    Console.WriteLine(@$"
+____________________________________________________________________________
+|                                                                          |
+|                            Custommers list                               |
+|__________________________________________________________________________|
+
+");
+                    string path = Directory.GetCurrentDirectory();
+                    var txtFiles = Directory.EnumerateFiles(path, "PF*.txt");
+                    if(txtFiles.Count == 0){
                     Console.WriteLine("There are no registers yet.");
                     Console.Write("(Press any key to return to Main-Menu.)");
                     Console.ReadKey();
@@ -75,20 +85,29 @@ Console.WriteLine(@$"*************************** Select an option: *************
                     goto Start;
                     }else{
                     
-            Console.WriteLine(@$"
-____________________________________________________________________________
-|                                                                          |
-|                            Custommers list                               |
-|__________________________________________________________________________|
-");
-                    foreach(PF eachCustommer in PFlist){
+/*                    foreach(PF eachCustommer in PFlist){
                     
-                    Console.Write(@$"Name: {eachCustommer.name} Birth day: {eachCustommer.birthDate} Address: {eachCustommer.address.num} {eachCustommer.address.street} ZIP code: {eachCustommer.address.ZIP} SSN: {eachCustommer.SSN} ID: {eachCustommer.ID}");
+                    Console.Write(@$"Name: {eachCustommer.name}  Birth day: {eachCustommer.exposiblebDate}  Address: {eachCustommer.address.num} {eachCustommer.address.street}  ZIP code: {eachCustommer.address.ZIP}  SSN: {eachCustommer.SSN}  ID: {eachCustommer.ID}");
                     Console.WriteLine();
                     }
+*/              
 
-                    Console.WriteLine();
-                    Console.Write("(Press any key to return to Main-Menu.)");
+                    foreach (string currentFile in txtFiles){
+                        
+                        using(StreamReader sr = new StreamReader($"{currentFile}.txt")){
+                            string line;
+                            while((line = sr.ReadLine()) != null){
+                                console.WriteLine($"{line}");
+
+                            }
+
+                        }
+
+                    }
+                    Console.Write(@$"
+****************************************************************************
+
+(Press any key to return to Main-Menu.)");
                     Console.ReadKey();
                     Console.Clear();
                     goto Start;
@@ -96,7 +115,7 @@ ____________________________________________________________________________
                     
                     case "3":
 
-                    customerType = 1;
+                    customerType = 2;
 
                     break;
 
@@ -109,10 +128,15 @@ ____________________________________________________________________________
                     Console.ReadKey();
                     goto Start;
                     }
-
+                    Console.WriteLine(@$"
+____________________________________________________________________________
+|                                                                          |
+|                        Bussiness custommers list                         |
+|__________________________________________________________________________|
+");
                     foreach(PJ eachCustommer in PJlist){
                     
-                    Console.Write(@$"Name: {eachCustommer.name} Address: {eachCustommer.address.num} {eachCustommer.address.street} ZIP code: {eachCustommer.address.ZIP} SSN: {eachCustommer.EIN} ID: {eachCustommer.CIK}");
+                    Console.Write(@$"Name: {eachCustommer.name} Address: {eachCustommer.address.num} {eachCustommer.address.street} ZIP code: {eachCustommer.address.ZIP} EIN: {eachCustommer.EIN} CIK: {eachCustommer.CIK}");
                     Console.WriteLine();
                     }
                     Console.Write("(Press any key to return to Main-Menu.)");
@@ -157,7 +181,7 @@ ____________________________________________________________________________
                 Console.Write("Write your ZIP code: ");
                 int varZIPCode = int.Parse(Console.ReadLine());
 
-                if(customerType == 1)
+                if(customerType == null)
                 {
 
                     Address addrB = new Address();
@@ -195,20 +219,29 @@ ____________________________________________________________________________
                                 Console.WriteLine("Invalid price informed, please try again.");
                                 goto validPricePJ;
                         }
+                    
+                    }
 
-                        pessoaJuridica.payTaxes(finalPrice);
-                        PJlist.Add(pessoaJuridica);
+                    using (StreamWriter bananas = new StreamWriter($"{pessoaJuridica.EIN}.txt"))
+                    {bananas.WriteLine(@$"
 
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.BackgroundColor = ConsoleColor.White;   
-                        loading("Processing");
-                        Console.Clear();
-                        Console.WriteLine(@$"
+****************************************************************************
+Name............: " + pessoaJuridica.name);
+                    bananas.WriteLine($"Address.........: St. {0} num.{1} ZIP code: {2}", addrB.street, addrB.num, addrB.ZIP);
+                    bananas.WriteLine("EIN.............: " + pessoaJuridica.EIN);
+                    bananas.WriteLine("CIK.............: " + pessoaJuridica.CIK);
+
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.BackgroundColor = ConsoleColor.White;   
+                    loading("Processing");
+                    Console.Clear();
+                    Console.WriteLine(@$"
 ____________________________________________________________________________
 |                    Custommer registered sucessfully!                     |
 |__________________________________________________________________________|
-|                                                                          |");
-                        Console.WriteLine("");
+");
                         Console.WriteLine("Name............: " + pessoaJuridica.name);
                         Console.WriteLine($"Address.........: St. {0} num.{1} ZIP code: {2}", addrB.street, addrB.num, addrB.ZIP);
                         Console.WriteLine("EIN.............: " + pessoaJuridica.EIN);
@@ -219,7 +252,7 @@ ____________________________________________________________________________
                          Console.WriteLine();
                          Console.Write("Press any key to go back to Main-Menu");
                          Console.ReadKey();                        
-                    }
+                        
                 }
 
                     Address addr = new Address();
@@ -240,6 +273,8 @@ ____________________________________________________________________________
                             Console.WriteLine("Customer register failed: underage restriction.");
                             goto Start;
                         }
+                        pessoaFisica.exposiblebDate = pessoaFisica.birthDate.ToString();
+                        pessoaFisica.exposiblebDate = pessoaFisica.exposiblebDate.Substring(0, 10);
                         pessoaFisica.name = varName;
                         pessoaFisica.address = addr;
                         Console.Write("Write your SSN: ");
@@ -273,7 +308,7 @@ ____________________________________________________________________________
 |                                                                          |");
                         Console.WriteLine(""); 
                         Console.WriteLine("Name............: " + pessoaFisica.name);
-                        Console.WriteLine("Birth day.......: " + pessoaFisica.birthDate);
+                        Console.WriteLine("Birth day.......: " + pessoaFisica.exposiblebDate);
                         Console.WriteLine($"Address.........: {0} {1} St., ZIP code: {2}", addr.num, addr.street, addr.ZIP);
                         Console.WriteLine("SSN.............: " + pessoaFisica.SSN);
                         Console.WriteLine("ID..............: " + pessoaFisica.ID);
